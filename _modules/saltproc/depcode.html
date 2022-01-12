@@ -153,8 +153,9 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        mats : dict</span>
+<span class="sd">        mats : dict of str to Materialflow</span>
 <span class="sd">            Dictionary that contains `Materialflow` objects.</span>
+
 <span class="sd">            ``key``</span>
 <span class="sd">                Name of burnable material.</span>
 <span class="sd">            ``value``</span>
@@ -201,8 +202,9 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        dep_dict : dict</span>
+<span class="sd">        dep_dict : dict of str to Materialflow</span>
 <span class="sd">            Dictionary that contains `Materialflow` objects.</span>
+
 <span class="sd">            ``key``</span>
 <span class="sd">                Name of burnable material.</span>
 <span class="sd">            ``value``</span>
@@ -395,13 +397,13 @@
 <span class="sd">        simulation.</span>
 
 <span class="sd">        Parameters</span>
-<span class="sd">        -----------</span>
+<span class="sd">        ----------</span>
 <span class="sd">        input_file : str</span>
 <span class="sd">            Serpent2 input file name and path.</span>
 
 <span class="sd">        Returns</span>
-<span class="sd">        --------</span>
-<span class="sd">        isotope_map : dict</span>
+<span class="sd">        -------</span>
+<span class="sd">        isotope_map : dict of str to str</span>
 <span class="sd">            Contains mapping for isotopes names from `zzaaam` to Serpent2 name</span>
 <span class="sd">            imported from Serpent2 ouput file:</span>
 
@@ -467,7 +469,7 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        mats : dict</span>
+<span class="sd">        mats : dict of str to Materialflow</span>
 <span class="sd">            Dictionary that contains `Materialflow` objects.</span>
 
 <span class="sd">            ``key``</span>
@@ -723,7 +725,7 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        dep_dict : dict</span>
+<span class="sd">        dep_dict : dict of str to Materialflow</span>
 <span class="sd">            Dictionary that contains `Materialflow` objects.</span>
 
 <span class="sd">            ``key``</span>

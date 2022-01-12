@@ -218,7 +218,7 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    mats : dict</span>
+<span class="sd">    mats : dict of str to Process</span>
 <span class="sd">        Dictionary that contains `Process` objects.</span>
 
 <span class="sd">        ``key``</span>
@@ -253,7 +253,7 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    mats : dict</span>
+<span class="sd">    mats : dict of str to Materialflow</span>
 <span class="sd">        Dictionary that contains `Materialflow` objects with feeds.</span>
 
 <span class="sd">        ``key``</span>
@@ -314,7 +314,7 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    -----------</span>
-<span class="sd">    mats : dict</span>
+<span class="sd">    mats : dict of str to Materialflow</span>
 <span class="sd">        Dictionary that contains `Materialflow` objects with burnable material</span>
 <span class="sd">        data right after irradiation in the core.</span>
 
@@ -325,13 +325,13 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    --------</span>
-<span class="sd">    waste : dict</span>
+<span class="sd">    waste : dict of str to Materialflow</span>
 
 <span class="sd">        ``key``</span>
 <span class="sd">            Process name.</span>
 <span class="sd">        ``value``</span>
 <span class="sd">            `Materialflow` object containing waste streams data.</span>
-<span class="sd">    extracted_mass: dict</span>
+<span class="sd">    extracted_mass: dict of str to Materialflow</span>
 
 <span class="sd">        ``key``</span>
 <span class="sd">            Name of burnable material.</span>
@@ -396,19 +396,19 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    -----------</span>
-<span class="sd">    mat : dict</span>
+<span class="sd">    mat : dict of str to Materialflow</span>
 
 <span class="sd">        ``key``</span>
 <span class="sd">            Name of burnable material.</span>
 <span class="sd">        ``value``</span>
 <span class="sd">            `Materialflow` object after performing all removals.</span>
-<span class="sd">    extracted_mass: dict</span>
+<span class="sd">    extracted_mass: dict of str to float</span>
 
 <span class="sd">        ``key``</span>
 <span class="sd">            Name of burnable material.</span>
 <span class="sd">        ``value``</span>
 <span class="sd">            Mass removed as waste in reprocessing function for each material.</span>
-<span class="sd">    waste : dict</span>
+<span class="sd">    waste : dict of str to Materialflow</span>
 
 <span class="sd">        ``key``</span>
 <span class="sd">            Process name.</span>
@@ -417,7 +417,7 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    --------</span>
-<span class="sd">    refilled_mats: dict</span>
+<span class="sd">    refilled_mats: dict of str to Materialflow</span>
 <span class="sd">        Dictionary that contains `Materialflow` objects.</span>
 
 <span class="sd">        ``key``</span>

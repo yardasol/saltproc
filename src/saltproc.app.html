@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>saltproc.app module &mdash; Saltproc  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -66,7 +67,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-saltproc.app">
+  <section id="module-saltproc.app">
 <span id="saltproc-app-module"></span><h1>saltproc.app module<a class="headerlink" href="#module-saltproc.app" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="saltproc.app.check_restart">
@@ -135,7 +136,7 @@ fresh fuel feeds.</p>
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
+<dd class="field-even"><p>dict of str to Materialflow</p>
 </dd>
 </dl>
 </dd></dl>
@@ -169,7 +170,7 @@ extraction process efficiency for each target chemical element.</p>
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
+<dd class="field-even"><p>dict of str to Process</p>
 </dd>
 </dl>
 </dd></dl>
@@ -181,21 +182,21 @@ extraction process efficiency for each target chemical element.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mat</strong> (<em>dict</em>) – <dl class="simple">
+<li><p><strong>mat</strong> (<em>dict of str to Materialflow</em>) – <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>Name of burnable material.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p><cite>Materialflow</cite> object after performing all removals.</p>
 </dd>
 </dl>
 </p></li>
-<li><p><strong>extracted_mass</strong> (<em>dict</em>) – <dl class="simple">
+<li><p><strong>extracted_mass</strong> (<em>dict of str to float</em>) – <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>Name of burnable material.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p>Mass removed as waste in reprocessing function for each material.</p>
 </dd>
 </dl>
 </p></li>
-<li><p><strong>waste</strong> (<em>dict</em>) – <dl class="simple">
+<li><p><strong>waste</strong> (<em>dict of str to Materialflow</em>) – <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>Process name.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p><cite>Materialflow</cite> object containing waste streams data.</p>
@@ -215,7 +216,7 @@ extraction process efficiency for each target chemical element.</p>
 </p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p>dict of str to Materialflow</p>
 </dd>
 </dl>
 </dd></dl>
@@ -226,7 +227,7 @@ extraction process efficiency for each target chemical element.</p>
 <dd><p>Applies reprocessing scheme to burnable materials.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mats</strong> (<em>dict</em>) – <p>Dictionary that contains <cite>Materialflow</cite> objects with burnable material
+<dd class="field-odd"><p><strong>mats</strong> (<em>dict of str to Materialflow</em>) – <p>Dictionary that contains <cite>Materialflow</cite> objects with burnable material
 data right after irradiation in the core.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>Name of burnable material.</p>
@@ -238,7 +239,7 @@ data right after irradiation in the core.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul>
-<li><p><strong>waste</strong> (<em>dict</em>) –</p>
+<li><p><strong>waste</strong> (<em>dict of str to Materialflow</em>) –</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>Process name.</p>
 </dd>
@@ -246,7 +247,7 @@ data right after irradiation in the core.</p>
 </dd>
 </dl>
 </li>
-<li><p><strong>extracted_mass</strong> (<em>dict</em>) –</p>
+<li><p><strong>extracted_mass</strong> (<em>dict of str to Materialflow</em>) –</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>Name of burnable material.</p>
 </dd>
@@ -267,7 +268,7 @@ data right after irradiation in the core.</p>
 <dd><p>Inititializes main run.</p>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>

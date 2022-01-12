@@ -178,10 +178,14 @@
 <span class="sd">        ----------</span>
 <span class="sd">        after_mats : `Materialflow`</span>
 <span class="sd">            Burnable material stream object after performing reprocessing.</span>
-<span class="sd">        waste_dict : dict</span>
-<span class="sd">            Dictionary that maps `processes` to waste `Materialflow` objects.</span>
-<span class="sd">            The key is Processes name (`str`). The value is `Materialflow`</span>
-<span class="sd">            object containing waste streams data.</span>
+<span class="sd">        waste_dict : dict of str to Materialflow</span>
+<span class="sd">            Dictionary that maps `Process` objects to waste `Materialflow`</span>
+<span class="sd">            objects.</span>
+
+<span class="sd">            ``key``</span>
+<span class="sd">                `Process` name (`str`)</span>
+<span class="sd">            ``value``</span>
+<span class="sd">                `Materialflow` object containing waste streams data.</span>
 <span class="sd">        step : int</span>
 <span class="sd">            Current depletion step.</span>
 
@@ -237,7 +241,7 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        mats : dict</span>
+<span class="sd">        mats : dict of str to Materialflow</span>
 <span class="sd">            Dictionary that contains `Materialflow` objects.</span>
 
 <span class="sd">            ``key``</span>

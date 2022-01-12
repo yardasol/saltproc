@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>saltproc.sparger module &mdash; Saltproc  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -66,7 +67,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-saltproc.sparger">
+  <section id="module-saltproc.sparger">
 <span id="saltproc-sparger-module"></span><h1>saltproc.sparger module<a class="headerlink" href="#module-saltproc.sparger" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="saltproc.sparger.Sparger">
@@ -84,7 +85,7 @@
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p>dict of str to float</p>
 </dd>
 </dl>
 </dd></dl>
@@ -133,7 +134,7 @@
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p>dict of str to float</p>
 </dd>
 </dl>
 </dd></dl>
@@ -321,7 +322,7 @@ efficiency values of target isotopes calculated in eff() function.</p>
 <dd><p>Class attributes’ descriptions for plotting purpose in sensitivity
 analysis
 :returns: <strong>pltdict</strong> – contains instances’ information
-:rtype: dict</p>
+:rtype: dict of str to str</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -340,19 +341,17 @@ schmidt number, reynold number and liquid phase mass transfer
 coefficient (m/s), respectively.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p><strong>rem_eff</strong> – Dictionary containing removal efficiency of each target isotope.
-<code class="docutils literal notranslate"><span class="pre">key</span></code></p>
-<blockquote>
-<div><p>Name of target isotope.</p>
-</div></blockquote>
+<dd class="field-odd"><p><p><strong>rem_eff</strong> – Dictionary containing removal efficiency of each target isotope.</p>
 <dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>Name of target isotope.</p>
+</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p>removal efficiency.</p>
 </dd>
 </dl>
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
+<dd class="field-even"><p>dict of str to float</p>
 </dd>
 </dl>
 </dd></dl>
@@ -404,7 +403,7 @@ default: Sherwood correlation from ORNL-TM-2245 Eq.36</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>

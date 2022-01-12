@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>saltproc.materialflow module &mdash; Saltproc  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -66,7 +67,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-saltproc.materialflow">
+  <section id="module-saltproc.materialflow">
 <span id="saltproc-materialflow-module"></span><h1>saltproc.materialflow module<a class="headerlink" href="#module-saltproc.materialflow" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="saltproc.materialflow.Materialflow">
@@ -212,20 +213,26 @@ then scaled by factor.</p>
 <dd class="field-odd"><p><strong>f</strong> (<em>float</em>) – Scaling factor.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Materialflow nuclide component dictionary of relative mass.
-The keys of <cite>new_mat_comp</cite> are preserved from PyNE Material
-(integers representing nuclides in id-form). The values are floats
-for each nuclide’s mass fraction, multiplied by factor f.</p>
+<dd class="field-even"><p><p><strong>new_mat_comp</strong> – Materialflow nuclide component dictionary of relative mass.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>The keys are preserved from PyNE Material (integers
+representing nuclides in id-form).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p>Each nuclide’s mass fraction, multiplied by
+factor f.</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p>dict of int to float</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>

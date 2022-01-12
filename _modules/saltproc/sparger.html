@@ -76,7 +76,8 @@
 
 <span class="sd">    Attributes</span>
 <span class="sd">    ----------</span>
-<span class="sd">    h_const : dict</span>
+<span class="sd">    h_const : dict of str to float</span>
+
 <span class="sd">        ``key``</span>
 <span class="sd">            Name of target isotope.</span>
 <span class="sd">        ``value``</span>
@@ -87,7 +88,8 @@
 <span class="sd">        liquid phase diffusivity (cm^2/s)</span>
 <span class="sd">    temp_room: real</span>
 <span class="sd">        room temperature (Kelvin)</span>
-<span class="sd">    exp_const: dict</span>
+<span class="sd">    exp_const: dict of str to float</span>
+
 <span class="sd">        ``key``</span>
 <span class="sd">            Name of target isotope.</span>
 <span class="sd">        ``value``</span>
@@ -218,7 +220,7 @@
 <span class="sd">        analysis</span>
 <span class="sd">        Return</span>
 <span class="sd">        ------</span>
-<span class="sd">        pltdict: dict</span>
+<span class="sd">        pltdict: dict of str to str</span>
 <span class="sd">            contains instances&#39; information</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">plt_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q_salt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;xaxis&#39;</span><span class="p">:</span> <span class="s1">&#39;salt flow rate ${(m^3/s)}$&#39;</span><span class="p">,</span>
@@ -284,8 +286,9 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        rem_eff : dict</span>
+<span class="sd">        rem_eff : dict of str to float</span>
 <span class="sd">            Dictionary containing removal efficiency of each target isotope.</span>
+
 <span class="sd">            ``key``</span>
 <span class="sd">                Name of target isotope.</span>
 <span class="sd">            ``value``</span>

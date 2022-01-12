@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>saltproc.simulation module &mdash; Saltproc  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -66,7 +67,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="module-saltproc.simulation">
+  <section id="module-saltproc.simulation">
 <span id="saltproc-simulation-module"></span><h1>saltproc.simulation module<a class="headerlink" href="#module-saltproc.simulation" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="saltproc.simulation.Simulation">
@@ -163,9 +164,15 @@ reprocessing was performed (grams per depletion step).</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>after_mats</strong> (<cite>Materialflow</cite>) – Burnable material stream object after performing reprocessing.</p></li>
-<li><p><strong>waste_dict</strong> (<em>dict</em>) – Dictionary that maps <cite>processes</cite> to waste <cite>Materialflow</cite> objects.
-The key is Processes name (<cite>str</cite>). The value is <cite>Materialflow</cite>
-object containing waste streams data.</p></li>
+<li><p><strong>waste_dict</strong> (<em>dict of str to Materialflow</em>) – <p>Dictionary that maps <cite>Process</cite> objects to waste <cite>Materialflow</cite>
+objects.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p><cite>Process</cite> name (<cite>str</cite>)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p><cite>Materialflow</cite> object containing waste streams data.</p>
+</dd>
+</dl>
+</p></li>
 <li><p><strong>step</strong> (<em>int</em>) – Current depletion step.</p></li>
 </ul>
 </dd>
@@ -181,7 +188,7 @@ mass_flowrate, void_fraction, at the current depletion step to it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mats</strong> (<em>dict</em>) – <p>Dictionary that contains <cite>Materialflow</cite> objects.</p>
+<li><p><strong>mats</strong> (<em>dict of str to Materialflow</em>) – <p>Dictionary that contains <cite>Materialflow</cite> objects.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>Name of burnable material.</p>
 </dd>
@@ -222,7 +229,7 @@ beginning of the Serpent iteration input file.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>

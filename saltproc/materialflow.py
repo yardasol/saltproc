@@ -80,11 +80,15 @@ class Materialflow(pymat):
 
         Returns
         -------
-        dict
+        new_mat_comp : dict of int to float
             Materialflow nuclide component dictionary of relative mass.
-            The keys of `new_mat_comp` are preserved from PyNE Material
-            (integers representing nuclides in id-form). The values are floats
-            for each nuclide’s mass fraction, multiplied by factor f.
+
+            ``key``
+                The keys are preserved from PyNE Material (integers
+                representing nuclides in id-form).
+            ``value``
+                Each nuclide's mass fraction, multiplied by
+                factor f.
 
         """
         old_dict = dict(self.comp)
@@ -197,11 +201,12 @@ class Materialflow(pymat):
         # result.temp = (x.temp*x.mass + y.temp*y.mass)/result.mass  # averaged
         result.temp = x.temp
         # Burnup is simply averaged by should be renormilized by heavy metal
-        result.burnup = (x.burnup*x.mass + y.burnup*y.mass)/result.mass
+        result.burnup = (x.burnup * x.mass + y.burnup * y.mass) / result.mass
         # result.density = result.mass/result.vol
         result.density = x.density
-        result.vol = result.mass/result.density
-        result.void_frac = (x.void_frac*x.vol + y.void_frac*y.vol)/result.vol
+        result.vol = result.mass / result.density
+        result.void_frac = (
+            x.void_frac * x.vol + y.void_frac * y.vol) / result.vol
         return result
 
     def __rmul__(self, scaling_factor):

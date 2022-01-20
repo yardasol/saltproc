@@ -1,0 +1,20 @@
+digraph {
+	compound=true
+	subgraph cluster_wdi {
+		compound=true label=write_depcode_input
+		subgraph cluster_wdi_init {
+			compound=true label="if-statement"
+			insert_path_to_geometry -> change_sim_par [label=data]
+			change_sim_par -> create_iter_matfile [label=data]
+		}
+		read_depcode_template -> insert_path_to_geometry [label=data lhead=cluster_wdi_init]
+		create_iter_matfile -> replace_burnup_parameters [label=data ltail=cluster_wdi_init]
+		read_depcode_template -> replace_burnup_parameters [label=data]
+	}
+	temp_file -> read_depcode_template [lhead=cluster_wdi]
+	inp_file -> read_depcode_template [lhead=cluster_wdi]
+	reactor -> replace_burnup_parameters
+	dts -> insert_path_to_geometry [lhead=cluster_wdi_init]
+	dts -> replace_burnup_parameters
+	restart -> insert_path_to_geometry [lhead=cluster_wdi_init]
+}

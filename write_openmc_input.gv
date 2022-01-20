@@ -1,0 +1,29 @@
+digraph {
+	compound=true
+	subgraph cluster_owdi {
+		compound=true label=write_openmc_input
+		subgraph cluster_owdi_init {
+			compound=true label="if-statement"
+			create_openmc_geometry -> change_sim_par_openmc [color=white]
+			change_sim_par_openmc -> create_openmc_iter_matfile [color=white]
+		}
+		read_openmc_templates -> create_openmc_geometry [label="Settings
+ Geometry
+ Materials
+" lhead=cluster_owdi_init]
+		create_openmc_iter_matfile -> replace_burnup_parameters [label="Settings
+ Geometry
+ Materials
+" ltail=cluster_owdi_init]
+		read_openmc_templates -> replace_burnup_parameters [label="Settings
+ Geometry
+ Materials
+"]
+	}
+	temp_files -> read_openmc_templates [lhead=cluster_owdi]
+	inp_files -> read_openmc_templates [lhead=cluster_owdi]
+	reactor -> replace_burnup_parameters
+	dts -> create_openmc_geometry [lhead=cluster_owdi_init]
+	dts -> replace_burnup_parameters
+	restart -> create_openmc_geometry [lhead=cluster_owdi_init]
+}

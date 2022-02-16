@@ -1,0 +1,71 @@
+ ===================>     TALLY 1: DELAYED-NEUTRONS     <===================
+
+ Delayed Group 1
+   Total Material
+     Delayed-Nu-Fission Rate              0.000175969 +/- 2.32551e-06
+ Delayed Group 2
+   Total Material
+     Delayed-Nu-Fission Rate              0.00106609 +/- 1.45051e-05
+ Delayed Group 3
+   Total Material
+     Delayed-Nu-Fission Rate              0.00110806 +/- 1.55852e-05
+ Delayed Group 4
+   Total Material
+     Delayed-Nu-Fission Rate              0.00283783 +/- 4.2482e-05
+ Delayed Group 5
+   Total Material
+     Delayed-Nu-Fission Rate              0.00153516 +/- 2.6207e-05
+ Delayed Group 6
+   Total Material
+     Delayed-Nu-Fission Rate              0.000630309 +/- 1.06657e-05
+ =================>     TALLY 2: DELAYED-NEUTRONS-1G     <==================
+
+ Delayed Group 1
+   Total Material
+     Delayed-Nu-Fission Rate              0.000175969 +/- 2.32551e-06
+ ====================>     TALLY 3: TOTAL-NEUTRONS     <====================
+
+ Material 1
+   Total Material
+     Nu-Fission Rate                      0.776017 +/- 0.0105098
+ ===================>     TALLY 4: PRECURSOR-DECAY     <====================
+
+ Delayed Group 1
+   Total Material
+     Decay Rate                           2.36253e-06 +/- 3.12204e-08
+ Delayed Group 2
+   Total Material
+     Decay Rate                           3.42901e-05 +/- 4.63866e-07
+ Delayed Group 3
+   Total Material
+     Decay Rate                           0.000135129 +/- 1.90866e-06
+ Delayed Group 4
+   Total Material
+     Decay Rate                           0.000890448 +/- 1.35653e-05
+ Delayed Group 5
+   Total Material
+     Decay Rate                           0.00135959 +/- 2.36303e-05
+ Delayed Group 6
+   Total Material
+     Decay Rate                           0.00187629 +/- 3.23454e-05
+ ==================>     TALLY 5: PRECURSOR-DECAY-1G     <==================
+
+ Delayed Group 1
+   Total Material
+     Decay Rate                           2.36253e-06 +/- 3.12204e-08
+ ====================>     TALLY 6: FISSION-ENERGY     <====================
+
+ Universe 2
+   Total Material
+     Recoverable fission power            5.88282e+07 +/- 787745
+     Prompt fission power                 5.46231e+07 +/- 731723
+     Kappa-Fission Rate                   5.91655e+07 +/- 792620
+ ====================>     TALLY 7: NORMALIZATION     <=====================
+
+ Universe 2
+   Total Material
+     heating                              5.40425e+07 +/- 723169
+ ============================>     TALLY 8     <============================
+
+ Internal
+

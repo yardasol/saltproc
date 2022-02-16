@@ -40,7 +40,7 @@ jobs:
           -H "Authorize: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
           -X GET \
-          --jq ''.[] | .name')
+          --jq '.[] | .name')
           if [[ $RELEASES =~ ${{ env.NEW_RELEASE_VERSION }} ]]
           then
             echo "Release exists"
@@ -62,7 +62,7 @@ jobs:
           -H "Authorize: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
           -X GET \
-          --jq ''.[] | .title')
+          --jq '.[] | .title')
           if [[ $MILESTONES =~ ${{ env.NEW_RELEASE_VERSION }} ]]
           then
             echo "Milestone exists"

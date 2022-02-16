@@ -43,25 +43,16 @@ jobs:
           --jq ''.[] | .name')
           if [[ $RELEASES =~ ${{ env.NEW_RELEASE_VERSION }} ]]
           then
-            EXISTS='true'
+            echo "Release exists"
           else
-            EXISTS='false'
+            gh api repos/${{ github.repository }}/releases \
+            -H "Authorize: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -X POST \
+            -F name=${{ env.NEW_RELEASE_VERSION }} \
+            -F tag_name=${{ env.NEW_RELEASE_VERSION }} \
+            -F draft=true 
           fi
-          echo "RELEASE_EXISTS="$EXISTS >> $GITHUB_ENV
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            
-
-      - name: Create a new release.
-        if: !(env.RELEASE_EXISTS)
-        run: |
-          gh api repos/${{ github.repository }}/releases \
-          -H "Authorize: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          -X POST \
-          -F name=${{ env.NEW_RELEASE_VERSION }} \
-          -F tag_name=${{ env.NEW_RELEASE_VERSION }} \
-          -F draft=true 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -74,23 +65,14 @@ jobs:
           --jq ''.[] | .title')
           if [[ $MILESTONES =~ ${{ env.NEW_RELEASE_VERSION }} ]]
           then
-            EXISTS='true'
+            echo "Milestone exists"
           else
-            EXISTS='false'
+            gh api repos/${{ github.repository }}/milestones \
+            -H "Authorize: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -X POST \
+            -F title=${{ env.NEW_RELEASE_VERSION }} 
           fi
-          echo "MILESTONE_EXISTS="$EXISTS >> $GITHUB_ENV
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-      - name: Create a new milestone.
-        if: !(env.MILESTONE_EXISTS)
-        run: |
-          gh api repos/${{ github.repository }}/milestones \
-          -H "Authorize: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          -X POST \
-          -F title=${{ env.NEW_RELEASE_VERSION }} 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

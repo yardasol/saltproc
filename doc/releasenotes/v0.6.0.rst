@@ -1,8 +1,8 @@
 ========================
-Release notes for v0.5.0
+Release notes for v0.6.0
 ========================
 
-
+.. note:: These release notes are currently in production.
 
 ..
   When documenting a bug fix or feature, please do so in the following format
@@ -23,7 +23,6 @@ Summary
   Describe generally the features of this release
 
 
-This is a test!!
 
 
 Dependency Changes

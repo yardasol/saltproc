@@ -1,7 +1,7 @@
-saltproc.tests.test\_app module
+saltproc.openmc\_deplete module
 ===============================
 
-.. automodule:: saltproc.tests.test_app
+.. automodule:: saltproc.openmc_deplete
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,14 +1,6 @@
 saltproc package
 ================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   saltproc.tests
-
 Submodules
 ----------
 
@@ -18,6 +10,7 @@ Submodules
    saltproc.app
    saltproc.depcode
    saltproc.materialflow
+   saltproc.openmc_deplete
    saltproc.process
    saltproc.reactor
    saltproc.separator

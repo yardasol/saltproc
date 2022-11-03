@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,8 +59,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>saltproc.process module</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">saltproc.process module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/saltproc.process.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -88,7 +89,7 @@ burnable material composition.</p>
 <li><p><strong>capacity</strong> (<em>float</em>) – maximum mass flow rate of the material flow which current process
 can handle (g/s)</p></li>
 <li><p><strong>volume</strong> (<em>float</em>) – total volume of the current facility (<span class="math notranslate nohighlight">\(cm^3\)</span>)</p></li>
-<li><p><strong>efficiency</strong> (<em>dict of str to float</em>) – <dl class="simple">
+<li><p><strong>efficiency</strong> (<em>dict</em><em> of </em><em>str to float</em>) – <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">key</span></code></dt><dd><p>element name for removal (not isotope)</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">value</span></code></dt><dd><p>removal efficency for the isotope (weight fraction)</p>

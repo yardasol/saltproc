@@ -79,7 +79,7 @@
 <span id="saltproc-serpent-depcode-module"></span><h1>saltproc.serpent_depcode module<a class="headerlink" href="#module-saltproc.serpent_depcode" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="saltproc.serpent_depcode.SerpentDepcode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saltproc.serpent_depcode.</span></span><span class="sig-name descname"><span class="pre">SerpentDepcode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exec_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_input_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geo_files</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/saltproc/serpent_depcode.html#SerpentDepcode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saltproc.serpent_depcode.SerpentDepcode" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saltproc.serpent_depcode.</span></span><span class="sig-name descname"><span class="pre">SerpentDepcode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exec_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_input_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geo_file_paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zaid_convention</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/saltproc/serpent_depcode.html#SerpentDepcode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saltproc.serpent_depcode.SerpentDepcode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="saltproc.abc.html#saltproc.abc.Depcode" title="saltproc.abc.Depcode"><code class="xref py py-class docutils literal notranslate"><span class="pre">Depcode</span></code></a></p>
 <p>Interface for running depletion steps in Serpent, as well as obtaining
 depletion step results.</p>
@@ -166,7 +166,7 @@ run depletion step, and modified after fuel reprocessing.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="saltproc.serpent_depcode.SerpentDepcode.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exec_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_input_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geo_files</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/saltproc/serpent_depcode.html#SerpentDepcode.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saltproc.serpent_depcode.SerpentDepcode.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exec_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_input_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geo_file_paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zaid_convention</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/saltproc/serpent_depcode.html#SerpentDepcode.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saltproc.serpent_depcode.SerpentDepcode.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize a SerpentDepcode object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -174,9 +174,17 @@ run depletion step, and modified after fuel reprocessing.</p>
 <li><p><strong>output_path</strong> (<em>str</em>) – Path to results storage directory.</p></li>
 <li><p><strong>exec_path</strong> (<em>str</em>) – Path to Serpent2 executable.</p></li>
 <li><p><strong>template_input_file_path</strong> (<em>str</em>) – Path to user input file for Serpent2</p></li>
-<li><p><strong>geo_files</strong> (<em>str</em><em> or </em><em>list</em><em>, </em><em>optional</em>) – Path to file that contains the reactor geometry.
+<li><p><strong>geo_file_paths</strong> (<em>str</em><em> or </em><em>list</em>) – Path to file that contains the reactor geometry.
 List of <cite>str</cite> if reactivity control by
 switching geometry is <cite>On</cite> or just <cite>str</cite> otherwise.</p></li>
+<li><p><strong>zaid_convention</strong> (<em>str</em>) – <p>ZAID naming convention for nuclide codes.</p>
+<p>’serpent’ - The third digit in ZA for nuclides in isomeric states
+is 3 (e.g. 47310 for for Ag-110m).</p>
+<p>’mcnp’ - ZA = Z*1000 + A + (300 + 100*m). where m is the mth
+isomeric state (e.g. 47510 for Ag-110m)</p>
+<p>’nndc’ - Identical to ‘mcnp’, except Am242m1 is 95242 and Am242
+is 95642</p>
+</p></li>
 </ul>
 </dd>
 </dl>
@@ -225,7 +233,7 @@ with <cite>aaa</cite> started with <code class="docutils literal notranslate"><s
 <dt class="sig sig-object py" id="saltproc.serpent_depcode.SerpentDepcode.create_runtime_matfile">
 <span class="sig-name descname"><span class="pre">create_runtime_matfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_lines</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/saltproc/serpent_depcode.html#SerpentDepcode.create_runtime_matfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saltproc.serpent_depcode.SerpentDepcode.create_runtime_matfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the runtime material file tracking burnable materials
-ans inserts the path to this file in the Serpent2 runtime input file</p>
+and inserts the path to this file in the Serpent2 runtime input file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>file_lines</strong> (<em>list</em><em> of </em><em>str</em>) – Serpent2 runtime input file.</p>
@@ -355,15 +363,16 @@ attribute.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="saltproc.serpent_depcode.SerpentDepcode.run_depletion_step">
-<span class="sig-name descname"><span class="pre">run_depletion_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/saltproc/serpent_depcode.html#SerpentDepcode.run_depletion_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saltproc.serpent_depcode.SerpentDepcode.run_depletion_step" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs a depletion step in Serpent2 as a subprocess with the given
-parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cores</strong> (<em>int</em>) – Number of cores to use for Serpent2 run (<cite>-omp</cite> flag in Serpent2).</p></li>
-<li><p><strong>nodes</strong> (<em>int</em>) – Number of nodes to use for Serpent2 run (<cite>-mpi</cite> flag in Serpent2).</p></li>
-</ul>
+<span class="sig-name descname"><span class="pre">run_depletion_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mpi_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/saltproc/serpent_depcode.html#SerpentDepcode.run_depletion_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saltproc.serpent_depcode.SerpentDepcode.run_depletion_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs a depletion step in Serpent2 as a subprocess.</p>
+<dl class="simple">
+<dt>i       Parameters</dt><dd><dl class="simple">
+<dt>mpi_args<span class="classifier">list of str</span></dt><dd><p>Arguments for running simulations on supercomputers using
+<code class="docutils literal notranslate"><span class="pre">mpiexec</span></code> or similar programs.</p>
+</dd>
+<dt>threads<span class="classifier">int</span></dt><dd><p>Threads to use for shared-memory parallelism</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -371,9 +380,7 @@ parameters.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="saltproc.serpent_depcode.SerpentDepcode.set_power_load">
 <span class="sig-name descname"><span class="pre">set_power_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reactor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/saltproc/serpent_depcode.html#SerpentDepcode.set_power_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saltproc.serpent_depcode.SerpentDepcode.set_power_load" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add power load attributes in a <code class="xref py py-class docutils literal notranslate"><span class="pre">Reactor</span></code> object to the
-<code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">power</span> <span class="pre">P</span> <span class="pre">dep</span> <span class="pre">daystep</span> <span class="pre">DEPSTEP</span></code> line in the Serpent2  runtime input
-file.</p>
+<dd><p>Set the power for the current depletion step</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
